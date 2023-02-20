@@ -96,7 +96,7 @@ public class JwtAuthFilter extends UsernamePasswordAuthenticationFilter {
                 .domain(jwtConfig.domain())
                 .path("/")
                 .maxAge(Duration.ofDays(jwtConfig.days()))
-                .sameSite("Lax")
+                .sameSite("None")
                 .build();
 
         response.setHeader(HttpHeaders.SET_COOKIE, cookie.toString());
